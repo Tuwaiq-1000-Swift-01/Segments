@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     view.addSubview(segmentedControl2)
     segmentedControl2.topAnchor.constraint(equalTo: segmentedControl.topAnchor, constant: 50).isActive = true
     segmentedControl2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    segmentedControl2.updateTitle(array: array2)
+    segmentedControl2.updateTitle(array2)
 
     //
     segmentedControl.addTarget(self, action: #selector(changeSegment), for: .valueChanged)
@@ -64,18 +64,18 @@ class ViewController: UIViewController {
     
     switch seg.selectedSegmentIndex {
     case 0 :
-      segmentedControl2.updateTitle(array: array2)
+      segmentedControl2.updateTitle(array2)
       
       
     case 1:
-      segmentedControl2.updateTitle(array: array3)
+      segmentedControl2.updateTitle(array3)
 
     case 2:
-      segmentedControl2.updateTitle(array: array4)
+      segmentedControl2.updateTitle(array4)
 
 
     case 3:
-      segmentedControl2.updateTitle(array: array5)
+      segmentedControl2.updateTitle(array5)
 
     default:
       break
@@ -87,10 +87,10 @@ class ViewController: UIViewController {
 
 extension UISegmentedControl {
   
-  func updateTitle(array titles: [String]) {
+  func updateTitle(_ array : [String]) {
     removeAllSegments()
-    for t in titles {
-      insertSegment(withTitle: t, at: numberOfSegments, animated: true)
+    for oneArray in array {
+      insertSegment(withTitle: oneArray , at: numberOfSegments, animated: true)
     }
     selectedSegmentIndex = 0
   }
