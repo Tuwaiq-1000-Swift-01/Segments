@@ -14,7 +14,6 @@ class ViewController: UIViewController {
   let array3 = ["Amerah", "Aisha", "Hajer", "Areej"]
   let array4 = ["Aisha", "Remaa", "Reem", "Fouz", "Sara"]
   let array5 = ["Aisha", "Remaa", "Reem", "Fouz", "Sara", "Aisha"]
-  var b = [""]
   let segmentedControl2 = UISegmentedControl()
   
   
@@ -25,9 +24,6 @@ class ViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    
-    
-    
     
     let segmentedControl = UISegmentedControl(items: ["2","3","4","5"])
     segmentedControl.backgroundColor = UIColor.systemBackground
@@ -44,8 +40,8 @@ class ViewController: UIViewController {
     
     
     segmentedControl2.backgroundColor = UIColor.systemBackground
-    segmentedControl2.selectedSegmentIndex = 0
     segmentedControl2.translatesAutoresizingMaskIntoConstraints = false
+    
     view.addSubview(segmentedControl2)
     
     segmentedControl2.topAnchor.constraint(equalTo: segmentedControl.topAnchor, constant: 50).isActive = true
@@ -64,14 +60,13 @@ class ViewController: UIViewController {
     switch seg.selectedSegmentIndex {
     case 0 :
       
-      b.insert(contentsOf: array2, at: 0)
+ 
       segmentedControl2.updateTitle(array: array2)
       //      segmentedControl2.upda
       
       
     case 1:
-      b.removeAll()
-      b.insert(contentsOf: array3, at: 0)
+  
       segmentedControl2.updateTitle(array: array3)
 
       
